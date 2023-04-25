@@ -10,6 +10,7 @@ interface Msg {
     id?: string;
     flowId?: string;
     mobile?: string;
+    vars?: { [key: string]: string };
     delivery: {
         startTime: FirebaseFirestore.Timestamp;
         endTime?: FirebaseFirestore.Timestamp;
@@ -29,7 +30,8 @@ function initialize() {
     // firestore = admin.firestore();
     logger.log(`Initializing MSG91`)
     msg91.initialize({
-        authKey: config.msg91.authKey as any
+        authKey: config.msg91.authKey as any,
+        pluginsource: "1400" 
     });
     logger.log(`Initializing MSG91 SMS`);
     sms = msg91.getSMS();
@@ -63,7 +65,7 @@ async function processWrite(change: functions.Change<functions.firestore.Documen
             }
             // Send SMS
             try {
-                const result = await sms.send(msg.flowId, { ...change.after.data(), delivery: null });
+                const result = await sms.send(msg.flowId, { mobile: msg?.mobile, ...msg?.vars });
                 msg.id = result?.message;
                 msg.delivery.status = "SUCCESS";
             } catch (error) {
