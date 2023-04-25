@@ -1,6 +1,6 @@
 # Send messages with MSG91
 
-**Author**: MSG91 (**[https://github.com/your_username](https://github.com/your_username)**)
+**Author**: MSG91
 
 **Description**: Best solution for sending cost effective SMS from firebase.
 
