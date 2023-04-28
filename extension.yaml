@@ -1,8 +1,8 @@
 name: msg91-send-msg
-version: 0.0.1
+version: 0.0.2
 specVersion: v1beta
 
-displayName: Send messages with MSG91
+displayName: Send Messages with MSG91
 description: Best solution for sending cost effective SMS from firebase.
 icon: msg91-icon.png
 license: Apache-2.0
