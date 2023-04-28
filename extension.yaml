@@ -4,7 +4,7 @@ specVersion: v1beta
 
 displayName: Send messages with MSG91
 description: Best solution for sending cost effective SMS from firebase.
-icon: https://storage.googleapis.com/msg91-file-system/msg91-icon.png
+icon: ./msg91-icon.png
 license: Apache-2.0
 
 author:
