@@ -4,7 +4,7 @@ specVersion: v1beta
 
 displayName: Send messages with MSG91
 description: Best solution for sending cost effective SMS from firebase.
-
+icon: https://storage.googleapis.com/production-file-system/293020/evvpofct/muckiydp
 license: Apache-2.0
 
 author:

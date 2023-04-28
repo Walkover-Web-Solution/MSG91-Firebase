@@ -31,7 +31,7 @@ function initialize() {
     logger.log(`Initializing MSG91`)
     msg91.initialize({
         authKey: config.msg91.authKey as any,
-        pluginsource: "1400" 
+        pluginsource: "1400"
     });
     logger.log(`Initializing MSG91 SMS`);
     sms = msg91.getSMS();
@@ -63,6 +63,9 @@ async function processWrite(change: functions.Change<functions.firestore.Documen
                 msg.delivery.error = "mobile is required";
                 break;
             }
+            if (msg?.delivery?.attempts > 3) {
+                break;
+            }
             // Send SMS
             try {
                 const result = await sms.send(msg.flowId, { mobile: msg?.mobile, ...msg?.vars });
@@ -82,7 +85,14 @@ async function processWrite(change: functions.Change<functions.firestore.Documen
             break;
 
     }
-    return await msgRef.update(msg as any);
+    try {
+        const update = await msgRef.update(msg as any);
+        return update;
+
+    } catch (error) {
+        logger.error(error);
+        return error;
+    }
 
 
 }
