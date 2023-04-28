@@ -2,11 +2,8 @@
 
 **Author**: MSG91
 
-**Description**: Best solution for sending cost effective SMS from firebase.
-
-
-
-**Details**: #### Additional setup
+**Description**: This Firebase extension allows users to send SMS messages from a collection of documents in real-time using the Msg91 service. Users can create a document in the specified collection with the recipient's phone number and the message to be sent, and the extension will automatically process the message and update the document with the status of the message delivery. This extension is a cost-effective solution for businesses and developers who need to send SMS messages at scale.
+#### Additional setup
 
 Before installing this extension, make sure that you've [set up a Cloud Firestore database](https://firebase.google.com/docs/firestore/quickstart) in your Firebase project.
 
