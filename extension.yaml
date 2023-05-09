@@ -1,5 +1,5 @@
 name: msg91-send-msg
-version: 0.0.2
+version: 0.0.3
 specVersion: v1beta
 
 displayName: Send Messages with MSG91
