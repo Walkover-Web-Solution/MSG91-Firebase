@@ -6,10 +6,10 @@ displayName: Send Messages with MSG91
 description: Best solution for sending cost effective SMS from firebase.
 icon: msg91-icon.png
 license: Apache-2.0
-
+tags: [marketing, messaging]
 author:
   authorName: MSG91
-  url: https://msg91.com  # Author URL
+  url: https://msg91.com # Author URL
 
 contributors:
   - authorName: Ankit Kumar
@@ -24,7 +24,6 @@ externalService:
 roles:
   - role: datastore.user
     reason: This extension needs to read the documents to process the messages.
-
 
 params:
   - param: LOCATION
@@ -88,7 +87,7 @@ params:
       You can get your Auth Key from MSG91 console.
     type: secret
     required: true
-  
+
   - param: COLLECTION
     label: Message COLLECTION
     description: >-
@@ -98,8 +97,6 @@ params:
     required: true
     validationRegex: "^[^/]+(/[^/]+/[^/]+)*$"
     validationErrorMessage: Must be a valid Cloud Firestore collection.
-
-
 
 # Add to extension.yaml:
 
